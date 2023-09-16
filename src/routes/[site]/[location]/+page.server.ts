@@ -22,8 +22,8 @@ export const actions: Actions = {
 
 		issuesString = issues.split(' ').join('+');
 
-		if (location.includes('lh')) {
-			location = location.replace('lh', 'ta');
+		if (location.includes('ad')) {
+			location = location.replace('ad', 'ta');
 		}
 
 		try {
