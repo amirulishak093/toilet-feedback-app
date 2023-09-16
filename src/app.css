@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	font-family: 'Poppins', 'sans-serif';
+}
+
+body {
+	@apply overflow-x-hidden;
+}
+
+.wrapper {
+	@apply max-w-[800px] mx-auto px-4;
+}
