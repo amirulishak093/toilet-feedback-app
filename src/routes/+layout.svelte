@@ -7,7 +7,7 @@
 	import '@fontsource/poppins';
 	import '@fontsource/poppins/500.css';
 	import '@fontsource/poppins/700.css';
-	import { fly } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 </script>
 
 <html lang="eng" data-theme="cupcake">
@@ -16,11 +16,7 @@
 		{#if $isLoading}
 			<LoadingSpinner />
 		{:else}
-			<div
-				class="pb-4"
-				in:fly={{ delay: 150, duration: 150, y: 50 }}
-				out:fly={{ delay: 150, duration: 150, y: -50 }}
-			>
+			<div class="pb-4" transition:fade={{ delay: 150, duration: 150 }}>
 				<slot />
 			</div>
 		{/if}

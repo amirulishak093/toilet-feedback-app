@@ -139,7 +139,7 @@
 						on:click={() => {
 							selectIssue(0);
 						}}
-						class="group flex items-center border {$issues[0].checked
+						class="group flex items-center border-2 {$issues[0].checked
 							? 'border-[#008480]'
 							: ''} bg-white rounded-xl p-4 transition-colors"
 					>
@@ -151,7 +151,7 @@
 						on:click={() => {
 							selectIssue(1);
 						}}
-						class="group flex items-center border {$issues[1].checked
+						class="group flex items-center border-2 {$issues[1].checked
 							? 'border-[#008480]'
 							: ''} bg-white rounded-xl p-4 transition-colors"
 					>
@@ -163,7 +163,7 @@
 						on:click={() => {
 							selectIssue(2);
 						}}
-						class="group flex items-center border {$issues[2].checked
+						class="group flex items-center border-2 {$issues[2].checked
 							? 'border-[#008480]'
 							: ''} bg-white rounded-xl p-4 transition-colors"
 					>
@@ -175,7 +175,7 @@
 						on:click={() => {
 							selectIssue(3);
 						}}
-						class="group flex items-center border {$issues[3].checked
+						class="group flex items-center border-2 {$issues[3].checked
 							? 'border-[#008480]'
 							: ''} bg-white rounded-xl p-4 transition-colors"
 					>
