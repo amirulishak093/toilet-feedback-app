@@ -59,20 +59,37 @@
 				<div class="flex flex-col gap-y-4 mt-4">
 					<button
 						name="score"
-						value={1}
+						value={2}
 						type="submit"
 						class="group flex flex-col items-center border hover:border-[#008480] bg-white rounded-xl py-6 px-4 transition-colors"
 					>
 						<img
 							class="w-36 group-hover:scale-105 transition-transform"
-							src="/images/good-emoji.png"
+							src="/images/excellent-emoji.png"
 						/>
 						<div
 							class="group-hover:bg-[#008480] group-hover:text-[#fff] rounded-full border py-3 px-6 mt-4 font-medium transition-colors"
 						>
-							Good
+							Excellent
 						</div>
 					</button>
+
+					<button
+					name="score"
+					value={1}
+					type="submit"
+					class="group flex flex-col items-center border hover:border-[#008480] bg-white rounded-xl py-6 px-4 transition-colors"
+				>
+					<img
+						class="w-36 group-hover:scale-105 transition-transform"
+						src="/images/good-emoji.png"
+					/>
+					<div
+						class="group-hover:bg-[#008480] group-hover:text-[#fff] rounded-full border py-3 px-6 mt-4 font-medium transition-colors"
+					>
+						Good
+					</div>
+				</button>
 
 					<button
 						name="score"
@@ -87,7 +104,7 @@
 						<div
 							class="group-hover:bg-[#008480] group-hover:text-[#fff] rounded-full border py-3 px-6 mt-4 font-medium transition-colors"
 						>
-							Neutral
+							Average
 						</div>
 					</button>
 
@@ -108,6 +125,26 @@
 							class="group-hover:bg-[#008480] group-hover:text-[#fff] rounded-full border py-3 px-6 mt-4 font-medium transition-colors"
 						>
 							Poor
+						</div>
+					</button>
+
+					<button
+						type="button"
+						on:click={() => {
+							setLoading(openFeedbackForm, 1000);
+						}}
+						name="score"
+						value={-1}
+						class="group flex flex-col items-center border hover:border-[#008480] bg-white rounded-xl py-6 px-4 transition-colors"
+					>
+						<img
+							class="w-36 group-hover:scale-105 transition-transform"
+							src="/images/very-poor-emoji.png"
+						/>
+						<div
+							class="group-hover:bg-[#008480] group-hover:text-[#fff] rounded-full border py-3 px-6 mt-4 font-medium transition-colors"
+						>
+							Very Poor
 						</div>
 					</button>
 
