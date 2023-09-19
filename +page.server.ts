@@ -30,8 +30,8 @@ export const actions: Actions = {
 			// const prefilledLink = `https://docs.google.com/forms/d/e/1FAIpQLSdKvFtTBo5LsiGnUcuru6XqnkbO_vbx4H5IJWH2nW-LeZuOZA/formResponse?usp=pp_url&entry.647138747=${site}&entry.353172185=${location}&entry.260921235=${score}&entry.642668930=${issuesString}`
 			const prefilledLink = `https://docs.google.com/forms/d/e/1FAIpQLSdKvFtTBo5LsiGnUcuru6XqnkbO_vbx4H5IJWH2nW-LeZuOZA/formResponse?usp=pp_url&entry.647138747=jsn&entry.353172185=ad1&entry.260921235=1`
 
-			await fetch(prefilledLink);
 			await createRating({ data: { score, site, location, issues } });
+			await fetch(prefilledLink);
 
 			return {
 				success: true,
