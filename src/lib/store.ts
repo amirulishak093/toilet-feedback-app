@@ -10,5 +10,8 @@ issues.set([
 	{ name: 'No Toilet Paper', checked: false },
 	{ name: 'Dirty', checked: false },
 	{ name: 'Empty Hand Soap', checked: false },
-	{ name: 'Bad Smell', checked: false }
+	{ name: 'Bad Smell', checked: false },
+	{ name: 'No Lights/Dark', checked: false },
+	{ name: 'Water Leakage', checked: false },
+	{ name: 'Slippery Floor', checked: false }
 ]);

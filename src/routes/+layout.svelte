@@ -11,7 +11,7 @@
 </script>
 
 <html lang="eng" data-theme="cupcake">
-	<div class="relative min-h-screen">
+	<div class="bg-[#FFFBD8] relative min-h-screen">
 		<Header />
 		{#if $isLoading}
 			<LoadingSpinner />
