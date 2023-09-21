@@ -177,7 +177,7 @@
 							selectIssue(0);
 						}}
 						class="group flex items-center border-2 {$issues[0].checked
-							? 'border-[#008480]'
+							? 'bg-gray-50 border-[#008480]'
 							: ''} bg-white rounded-xl p-4 transition-colors"
 					>
 						<img class="w-12" src="/images/toilet-paper.png" />
