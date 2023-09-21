@@ -14,7 +14,7 @@ export const actions: Actions = {
 		const formData = await request.formData();
 
 		const score = parseInt(formData.get('score') as string);
-		const site = String(formData.get('site')) ?? '';
+		const site = String(formData.get('site')).toUpperCase() ?? '';
 		let location = String(formData.get('location')) ?? '';
 		const issues = String(formData.get('issues')) ?? '';
 
@@ -23,7 +23,7 @@ export const actions: Actions = {
 		issuesString = issues.split(' ').join('+');
 
 		if (location.includes('ad')) {
-			location = location.replace('ad', 'ta');
+			location = location.replace('ad', 'ta').toUpperCase();
 		}
 
 		try {
