@@ -113,8 +113,9 @@
 					<button
 						type="button"
 						on:click={() => {
+							$currentScore = -1
 							setLoading(openFeedbackForm, 1000);
-							currentScore = -1
+							
 						}}
 						name="score"
 						class="group flex flex-col items-center border-4 hover:border-[#008480] bg-white rounded-xl py-6 px-4 transition-colors"
@@ -133,8 +134,9 @@
 					<button
 						type="button"
 						on:click={() => {
+							$currentScore = -2
 							setLoading(openFeedbackForm, 1000);
-							currentScore = -2
+							
 						}}
 						name="score"
 						class="group flex flex-col items-center border-4 hover:border-[#008480] bg-white rounded-xl py-6 px-4 transition-colors"
@@ -260,11 +262,9 @@ class="group flex items-center border-4 {$issues[6].checked
 					
 					
 	
-			
-
 					<input name="site" type="hidden" value={data.site} />
 					<input name="location" type="hidden" value={data.location} />
-					<input name="score" type="hidden" value={currentScore} />
+					<input name="score" type="hidden" value={$currentScore} />
 					<input name="issues" type="hidden" bind:value={currentIssues} />
 
 					<!-- Bottom Pane -->
