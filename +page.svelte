@@ -6,7 +6,7 @@
 	export let data;
 	export let form;
 
-	let currentScore = -1;
+	$: currentScore = -1;
 
 	function openFeedbackForm() {
 		$isFeedbackForm = true;
