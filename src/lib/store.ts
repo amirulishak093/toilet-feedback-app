@@ -3,6 +3,7 @@ import { writable } from 'svelte/store';
 export const isLoading = writable<boolean>();
 export const isFeedbackForm = writable<boolean>();
 export const issues = writable<Array<{ name: string; checked: boolean }>>();
+export const currentScore = writable<number>()
 
 isLoading.set(false);
 isFeedbackForm.set(false);
@@ -15,3 +16,4 @@ issues.set([
 	{ name: 'Water Leakage', checked: false },
 	{ name: 'Slippery Floor', checked: false }
 ]);
+currentScore.set(-1)
