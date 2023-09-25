@@ -6,6 +6,8 @@
 	export let data;
 	export let form;
 
+	let currentScore = -1;
+
 	function openFeedbackForm() {
 		$isFeedbackForm = true;
 	}
@@ -61,7 +63,7 @@
 						name="score"
 						value={2}
 						type="submit"
-						class="group flex flex-col items-center border hover:border-[#008480] bg-white rounded-xl py-6 px-4 transition-colors"
+						class="group flex flex-col items-center border-4 hover:border-[#008480] bg-white rounded-xl py-6 px-4 transition-colors"
 					>
 						<img
 							class="w-36 group-hover:scale-105 transition-transform"
@@ -78,7 +80,7 @@
 					name="score"
 					value={1}
 					type="submit"
-					class="group flex flex-col items-center border hover:border-[#008480] bg-white rounded-xl py-6 px-4 transition-colors"
+					class="group flex flex-col items-center border-4 hover:border-[#008480] bg-white rounded-xl py-6 px-4 transition-colors"
 				>
 					<img
 						class="w-36 group-hover:scale-105 transition-transform"
@@ -95,7 +97,7 @@
 						name="score"
 						value={0}
 						type="submit"
-						class="group flex flex-col items-center border hover:border-[#008480] bg-white rounded-xl py-6 px-4 transition-colors"
+						class="group flex flex-col items-center border-4 hover:border-[#008480] bg-white rounded-xl py-6 px-4 transition-colors"
 					>
 						<img
 							class="w-36 group-hover:scale-105 transition-transform"
@@ -112,10 +114,10 @@
 						type="button"
 						on:click={() => {
 							setLoading(openFeedbackForm, 1000);
+							currentScore = -1
 						}}
 						name="score"
-						value={-1}
-						class="group flex flex-col items-center border hover:border-[#008480] bg-white rounded-xl py-6 px-4 transition-colors"
+						class="group flex flex-col items-center border-4 hover:border-[#008480] bg-white rounded-xl py-6 px-4 transition-colors"
 					>
 						<img
 							class="w-36 group-hover:scale-105 transition-transform"
@@ -132,10 +134,10 @@
 						type="button"
 						on:click={() => {
 							setLoading(openFeedbackForm, 1000);
+							currentScore = -2
 						}}
 						name="score"
-						value={-2}
-						class="group flex flex-col items-center border hover:border-[#008480] bg-white rounded-xl py-6 px-4 transition-colors"
+						class="group flex flex-col items-center border-4 hover:border-[#008480] bg-white rounded-xl py-6 px-4 transition-colors"
 					>
 						<img
 							class="w-36 group-hover:scale-105 transition-transform"
@@ -170,59 +172,99 @@
 					Select at least <span class="font-bold">one</span> of the issues
 				</div>
 
-				<div class="flex flex-col gap-y-2 mt-4">
+				<div class="flex flex-col gap-y-2 mt-4 pb-20">
 					<button
 						type="button"
 						on:click={() => {
 							selectIssue(0);
 						}}
-						class="group flex items-center border-2 {$issues[0].checked
-							? 'bg-gray-100 border-[#008480]'
-							: ''} bg-white rounded-xl p-4 transition-colors"
+						class="group flex items-center border-4 {$issues[0].checked
+							? 'bg-slate-200 border-[#008480]'
+							: 'bg-white'} rounded-xl p-4 transition-colors"
 					>
 						<img class="w-12" src="/images/toilet-paper.png" />
-						<div class="flex-1 transition-colors">No Toilet Paper</div>
+						<div class="flex-1 transition-colors">{$issues[0].name}</div>
 					</button>
 					<button
 						type="button"
 						on:click={() => {
 							selectIssue(1);
 						}}
-						class="group flex items-center border-2 {$issues[1].checked
-							? 'bg-gray-100 border-[#008480]'
-							: ''} bg-white rounded-xl p-4 transition-colors"
+class="group flex items-center border-4 {$issues[1].checked
+	? 'bg-slate-200 border-[#008480]'
+	: 'bg-white'} rounded-xl p-4 transition-colors"
 					>
-						<img class="w-12" src="/images/cleaning.png" />
-						<div class="flex-1 transition-colors">Dirty</div>
+						<img class="w-12" src="/images/dirty-toilet.png" />
+						<div class="flex-1 transition-colors">{$issues[1].name}</div>
 					</button>
 					<button
 						type="button"
 						on:click={() => {
 							selectIssue(2);
 						}}
-						class="group flex items-center border-2 {$issues[2].checked
-							? 'bg-gray-100 border-[#008480]'
-							: ''} bg-white rounded-xl p-4 transition-colors"
+class="group flex items-center border-4 {$issues[2].checked
+	? 'bg-slate-200 border-[#008480]'
+	: 'bg-white'} rounded-xl p-4 transition-colors"
 					>
 						<img class="w-12" src="/images/soap-dispenser.png" />
-						<div class="flex-1 transition-colors">No Hand Soap</div>
+						<div class="flex-1 transition-colors">{$issues[2].name}</div>
 					</button>
 					<button
 						type="button"
 						on:click={() => {
 							selectIssue(3);
 						}}
-						class="group flex items-center border-2 {$issues[3].checked
-							? 'bg-gray-100 border-[#008480]'
-							: ''} bg-white rounded-xl p-4 transition-colors"
+class="group flex items-center border-4 {$issues[3].checked
+	? 'bg-slate-200 border-[#008480]'
+	: 'bg-white'} rounded-xl p-4 transition-colors"
 					>
-						<img class="w-12" src="/images/odor.png" />
-						<div class="flex-1 transition-colors">Bad Smell</div>
+						<img class="w-12" src="/images/smelling.png" />
+						<div class="flex-1 transition-colors">{$issues[3].name}</div>
 					</button>
+					<button
+					type="button"
+					on:click={() => {
+						selectIssue(4);
+					}}
+class="group flex items-center border-4 {$issues[4].checked
+? 'bg-slate-200 border-[#008480]'
+: 'bg-white'} rounded-xl p-4 transition-colors"
+				>
+					<img class="w-12" src="/images/lights-off.png" />
+					<div class="flex-1 transition-colors">{$issues[4].name}</div>
+				</button>
+				<button
+				type="button"
+				on:click={() => {
+					selectIssue(5);
+				}}
+class="group flex items-center border-4 {$issues[5].checked
+? 'bg-slate-200 border-[#008480]'
+: 'bg-white'} rounded-xl p-4 transition-colors"
+			>
+				<img class="w-12" src="/images/piping.png" />
+				<div class="flex-1 transition-colors">{$issues[5].name}</div>
+			</button>
+			<button
+			type="button"
+			on:click={() => {
+				selectIssue(6);
+			}}
+class="group flex items-center border-4 {$issues[6].checked
+? 'bg-slate-200 border-[#008480]'
+: 'bg-white'} rounded-xl p-4 transition-colors"
+		>
+			<img class="w-12" src="/images/slippery-floor.png" />
+			<div class="flex-1 transition-colors">{$issues[6].name}</div>
+		</button>
+					
+					
+	
+			
 
 					<input name="site" type="hidden" value={data.site} />
 					<input name="location" type="hidden" value={data.location} />
-					<input name="score" type="hidden" value={-1} />
+					<input name="score" type="hidden" value={currentScore} />
 					<input name="issues" type="hidden" bind:value={currentIssues} />
 
 					<!-- Bottom Pane -->
