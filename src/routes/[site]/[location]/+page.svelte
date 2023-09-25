@@ -6,6 +6,8 @@
 	export let data;
 	export let form;
 
+	$: currentScore = -1;
+
 	function openFeedbackForm() {
 		$isFeedbackForm = true;
 	}
@@ -112,9 +114,9 @@
 						type="button"
 						on:click={() => {
 							setLoading(openFeedbackForm, 1000);
+							currentScore = -1
 						}}
 						name="score"
-						value={-1}
 						class="group flex flex-col items-center border-4 hover:border-[#008480] bg-white rounded-xl py-6 px-4 transition-colors"
 					>
 						<img
@@ -132,9 +134,9 @@
 						type="button"
 						on:click={() => {
 							setLoading(openFeedbackForm, 1000);
+							currentScore = -2
 						}}
 						name="score"
-						value={-2}
 						class="group flex flex-col items-center border-4 hover:border-[#008480] bg-white rounded-xl py-6 px-4 transition-colors"
 					>
 						<img
@@ -262,7 +264,7 @@ class="group flex items-center border-4 {$issues[6].checked
 
 					<input name="site" type="hidden" value={data.site} />
 					<input name="location" type="hidden" value={data.location} />
-					<input name="score" type="hidden" value={-1} />
+					<input name="score" type="hidden" value={currentScore} />
 					<input name="issues" type="hidden" bind:value={currentIssues} />
 
 					<!-- Bottom Pane -->
