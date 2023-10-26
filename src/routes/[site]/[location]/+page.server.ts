@@ -6,7 +6,7 @@ export function load(event: RequestEvent) {
 	const site = event.params.site;
 	const location = event.params.location;
 
-	if (!location.includes('ta1' || 'ta2')) {
+	if (!location === 'ta1' || 'ta2') {
 		throw error(404, 'Location not found');
 	}
 	return { site, location };
