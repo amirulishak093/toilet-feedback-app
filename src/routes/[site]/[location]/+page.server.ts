@@ -24,8 +24,7 @@ export const actions: Actions = {
 
 		if (!location.includes('ta1' || 'ta2')) {
 			return {
-			    success: false,
-			    status: 'Location is not found'
+				locationNotFound: form?.locationNotFound
 			}
 		}
 
