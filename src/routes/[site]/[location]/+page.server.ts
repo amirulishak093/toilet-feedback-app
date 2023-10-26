@@ -23,7 +23,10 @@ export const actions: Actions = {
 		issuesString = issues.split(' ').join('+');
 
 		if (!location.includes('ta1' || 'ta2')) {
-			throw error(404, 'Location not found');
+			return {
+			    success: false,
+			    status: 'Location is not found'
+			}
 		}
 
 		try {
