@@ -22,8 +22,8 @@ export const actions: Actions = {
 
 		issuesString = issues.split(' ').join('+');
 
-		if (location.includes('ad')) {
-			location = location.replace('ad', 'ta');
+		if (!location.includes('ta1' || 'ta2')) {
+			throw error(404, 'Location not found');
 		}
 
 		try {
