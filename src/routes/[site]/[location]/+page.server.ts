@@ -6,9 +6,9 @@ export function load(event: RequestEvent) {
 	const site = event.params.site;
 	const location = event.params.location;
 
-	if (location !== 'ta1' || location !== 'ta2') {
-		throw error(404, 'Location not found');
-	}
+	// if (location !== 'ta1' || location !== 'ta2') {
+	// 	throw error(404, 'Location not found');
+	// }
 	return { site, location };
 }
 
