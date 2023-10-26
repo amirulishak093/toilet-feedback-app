@@ -289,6 +289,10 @@ class="group flex items-center border-4 {$issues[6].checked
 				</div>
 			</form>
 		{/if}
+	{:else if form?.locationNotFound}
+		<div class="text-center font-bold text-xl">404</div>
+		<div class="text-center font-medium">The location is not found</div>
+
 	{:else}
 		<div class="text-center font-bold text-xl">Thank You</div>
 		<div class="text-center font-medium">Your response has been submitted</div>
