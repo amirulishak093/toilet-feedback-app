@@ -6,6 +6,9 @@ export function load(event: RequestEvent) {
 	const site = event.params.site;
 	const location = event.params.location;
 
+	if (!location.includes('ta1' || 'ta2')) {
+		throw error(404, 'Location not found');
+	}
 	return { site, location };
 }
 
@@ -21,12 +24,6 @@ export const actions: Actions = {
 		let issuesString = '';
 
 		issuesString = issues.split(' ').join('+');
-
-		if (!location.includes('ta1' || 'ta2')) {
-			return {
-				locationNotFound: form?.locationNotFound
-			}
-		}
 
 		try {
 			const prefilledLink = `https://docs.google.com/forms/d/e/1FAIpQLSdKvFtTBo5LsiGnUcuru6XqnkbO_vbx4H5IJWH2nW-LeZuOZA/formResponse?usp=pp_url&entry.647138747=${site}&entry.353172185=${location}&entry.260921235=${score}&entry.642668930=${issuesString}`
